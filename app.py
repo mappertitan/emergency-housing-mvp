@@ -235,7 +235,8 @@ label{
     line-height:1.4;
 }
 
-</style>''',unsafe_allow_html=True)
+
+
 # ⚠️ RESEARCH PROTOTYPE #Message to public. 
 st.markdown("""
 <div class="prototype-banner">
@@ -251,7 +252,33 @@ st.markdown("""
         official damage assessment, or emergency services.
     </div>
 </div>
-""", unsafe_allow_html=True)
+
+/* =========================================================
+   PROTOTYPE BANNER
+   ========================================================= */
+
+.prototype-sub{
+    color:#cbd5e1;
+    font-size:.82rem;
+    line-height:1.4;
+}
+
+/* ---to change font to message to user --- */
+.stAlert {
+    background-color: #1e293b !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 12px !important;
+}
+
+.stAlert p, .stAlert div, .stAlert span {
+    color: #ffffff !important;
+}
+
+.stAlert svg {
+    fill: #60a5fa !important;
+}
+
+</style>''', unsafe_allow_html=True)
 
 QUESTIONS=[('structural','¿Observas grietas importantes, columnas o vigas dañadas, o elementos estructurales deformados?'),('partial_collapse','¿Hay colapso parcial de techo, piso, muro o una parte importante de la vivienda?'),('total_collapse','¿La vivienda presenta colapso total o una parte importante está completamente en escombros?'),('instability','¿Observas inclinación, desplazamiento o movimiento visible de la estructura?'),('debris','¿Hay grandes cantidades de escombros o elementos que hayan caído dentro de la vivienda?'),('utilities','¿Hay fugas, cables expuestos, fuego, olor a gas u otro peligro visible?'),('access','¿La entrada, las escaleras o las rutas de salida están bloqueadas o dañadas?'),('occupancy','¿La vivienda estaba ocupada cuando ocurrió el terremoto?'),('dependent','¿En la vivienda viven niños pequeños, adultos mayores o personas con movilidad reducida?'),('uninhabitable','¿Por el estado observado, consideras que no es seguro permanecer dentro de la vivienda?')]
 DEMO_CASES=[{'id':'DEMO-240381','lat':3.4516,'lon':-76.5320,'priority':'ALTA','score':88,'damage':'Colapso parcial'},{'id':'DEMO-571204','lat':3.4288,'lon':-76.5225,'priority':'MEDIA','score':61,'damage':'Daño estructural visible'},{'id':'DEMO-813625','lat':3.4742,'lon':-76.5091,'priority':'BAJA','score':29,'damage':'Daños menores'},{'id':'DEMO-905117','lat':3.4370,'lon':-76.5480,'priority':'ALTA','score':79,'damage':'Daño severo'}]
