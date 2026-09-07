@@ -14,6 +14,7 @@ DB_FILE=DATA_DIR/'cases.json'
 
 st.set_page_config(page_title='Emergency Housing — MVP 0.4',page_icon='🏠',layout='wide',initial_sidebar_state='collapsed')
 #st.markdown('''<style>.stApp{background:linear-gradient(135deg,#07111f 0%,#0d1c2f 55%,#13263c 100%)}.block-container{max-width:1400px;padding-top:1rem}.hero{padding:25px 28px;border-radius:22px;color:white;background:linear-gradient(120deg,#10234a,#172f58 55%,#1c5a47);border:1px solid rgba(255,255,255,.12)}.hero h1{margin:0;font-size:2.15rem}.hero p{color:#dce7f5;margin-top:.4rem}.card{background:rgba(13,23,36,.88);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:18px;margin-bottom:14px;color:#eef4fb}.small{color:#aebed1;font-size:.88rem}.badge{display:inline-block;padding:5px 11px;border-radius:999px;font-weight:700}.high{background:#5b1f23;color:#ffb7b5}.medium{background:#59420e;color:#ffd77a}.low{background:#153f26;color:#9be7a9}</style>''',unsafe_allow_html=True)
+
 st.markdown('''<style>
 /* =========================================================
    EMERGENCY HOUSING — GLOBAL UI
@@ -206,8 +207,52 @@ label{
     color:#cbd5e1;
     line-height:1.5;
 }
+.prototype-banner{
+    background:#111827;
+    border:1px solid #334155;
+    border-left:5px solid #f59e0b;
+    border-radius:14px;
+    padding:14px 18px;
+    margin-bottom:18px;
+    color:#f3f4f6;
+}
+
+.prototype-title{
+    font-weight:700;
+    font-size:1rem;
+    margin-bottom:4px;
+}
+
+.prototype-main{
+    font-weight:600;
+    font-size:.95rem;
+    margin-bottom:4px;
+}
+
+.prototype-sub{
+    color:#cbd5e1;
+    font-size:.82rem;
+    line-height:1.4;
+}
 
 </style>''',unsafe_allow_html=True)
+# ⚠️ RESEARCH PROTOTYPE #Message to public. 
+st.markdown("""
+<div class="prototype-banner">
+    <div class="prototype-title">
+        ⚠️ Research prototype
+    </div>
+    <div class="prototype-main">
+        Please do not submit real personal, property or emergency information.
+    </div>
+    <div class="prototype-sub">
+        This prototype is for demonstration and research purposes only.
+        It does not replace professional structural inspection,
+        official damage assessment, or emergency services.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 QUESTIONS=[('structural','¿Observas grietas importantes, columnas o vigas dañadas, o elementos estructurales deformados?'),('partial_collapse','¿Hay colapso parcial de techo, piso, muro o una parte importante de la vivienda?'),('total_collapse','¿La vivienda presenta colapso total o una parte importante está completamente en escombros?'),('instability','¿Observas inclinación, desplazamiento o movimiento visible de la estructura?'),('debris','¿Hay grandes cantidades de escombros o elementos que hayan caído dentro de la vivienda?'),('utilities','¿Hay fugas, cables expuestos, fuego, olor a gas u otro peligro visible?'),('access','¿La entrada, las escaleras o las rutas de salida están bloqueadas o dañadas?'),('occupancy','¿La vivienda estaba ocupada cuando ocurrió el terremoto?'),('dependent','¿En la vivienda viven niños pequeños, adultos mayores o personas con movilidad reducida?'),('uninhabitable','¿Por el estado observado, consideras que no es seguro permanecer dentro de la vivienda?')]
 DEMO_CASES=[{'id':'DEMO-240381','lat':3.4516,'lon':-76.5320,'priority':'ALTA','score':88,'damage':'Colapso parcial'},{'id':'DEMO-571204','lat':3.4288,'lon':-76.5225,'priority':'MEDIA','score':61,'damage':'Daño estructural visible'},{'id':'DEMO-813625','lat':3.4742,'lon':-76.5091,'priority':'BAJA','score':29,'damage':'Daños menores'},{'id':'DEMO-905117','lat':3.4370,'lon':-76.5480,'priority':'ALTA','score':79,'damage':'Daño severo'}]
 
